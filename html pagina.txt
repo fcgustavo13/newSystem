@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+<b:include data='blog' name='all-head-content'/>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<title><data:blog.pageName/> | <data:blog.title/></title><b:else/><title><data:blog.pageTitle/></title>
+</b:if>
+<b:skin>
+<![CDATA[
+#contenedor-general {
+width:960px; /*Ancho del blog*/
+margin:0 auto 0; /*Centramos el contenido*/
+padding:0; /*Evitamos espaciados internos*/
+}
+
+#cabecera {
+margin:0 0 30px 0; /*Márgenes de la cabecera*/
+height:100px; /*Alto de la cabecera*/
+}
+
+#cuerpo-entradas {
+float:left; /*Alineación de las entradas a la izquierda*/
+width:650px; /*Ancho de las entradas*/
+padding:10px; /*Espaciados internos*/
+background-color:#000;
+}
+
+#columna-lateral {
+float:right; /*Alineación de la sidebar a la derecha*/
+margin:0; /* Sin márgenes */
+width:280px; /*Ancho de la sidebar*/
+}
+
+#pie-de-pagina {
+padding:10px; /*Espaciados internos*/
+margin:30px 0 0 0; /*Márgenes*/
+}
+]]></b:skin>
+  
+</head>
+<body>  
+<div id="contenedor-general">
+	<div id="cabecera">
+		<b:section id="header" class="header" showaddelement="yes">
+			<b:widget id="Header1" locked="true" title="Cabecera del blog" type="Header"/> 
+		</b:section>
+	</div> 
+	<div id="cuerpo-entradas">
+		<b:section id="main" class="main" showaddelement="yes">
+			<b:widget id="Blog1" locked="true" title="Entradas del blog" type="Blog"/>
+		</b:section>
+	</div>
+	<div id="columna-lateral">
+		<b:section id="sidebar" class="sidebar" showaddelement="yes">
+			<b:widget id="Label1" locked="false" title="Categorías" type="Label"/>
+		</b:section>
+	</div>
+	<div style="clear:both" />
+	<div id="pie-de-pagina">
+		<b:section id="footer" class="footer" showaddelement="yes">
+		</b:section>
+	</div>
+</div>
+</body>
+</html>
